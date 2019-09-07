@@ -1,0 +1,14 @@
+ DisplayProgressBar←{
+ ⍝ ⍺ ←→ Parameter namespace (Optional)
+ ⍝ ⍵ ←→ start max
+ ⍝      start←The value you want the progress bar to start at
+ ⍝      max←The end value for the progress bar
+ ⍝ ← ←→ A reference containing setProgress() to update the progress value
+     ⎕PATH←'##.Utils'
+     ⍺←''
+     h←⎕NEW HtmlFormBuilder 0
+     _←h.addProgressBar ⍵
+     size←15 15
+     o←⍺ renderPage h size     ⍝ Get object back
+     returnProgressObject o
+ }

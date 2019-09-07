@@ -1,0 +1,7 @@
+ NotifySuccess←{
+ ⍝ ⍺ ←→ Parameter namespace (Optional)
+ ⍝ Success message you want displayed
+     ⎕PATH←'##.Utils'
+     ⍺←''
+     r←⍺ Notify'Success'⍵
+ }

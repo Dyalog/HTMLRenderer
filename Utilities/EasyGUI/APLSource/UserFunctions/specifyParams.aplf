@@ -1,0 +1,9 @@
+ specifyParams←{
+ ⍝ ⍵ ←→ List of labeled arguments to populate NS
+ ⍝      ('') | 'Key' 'Value' | ('Key1' Value1)..('KeyN' ValueN)
+ ⍝ ← ←→ NS that can be supplied to any UserFunction as ⍺
+     ⎕PATH←'##.Utils'
+     ns←setupParamNS''
+     argIsEmpty←isEmpty ⍵
+     argIsEmpty:ns ⋄ ns populateParamNS ⍵
+ }

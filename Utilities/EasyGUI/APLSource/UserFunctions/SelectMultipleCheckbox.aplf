@@ -1,0 +1,12 @@
+ SelectMultipleCheckbox←{
+ ⍝ ⍺ ←→ Parameter namespace (Optional)
+ ⍝ ⍵ ←→ List of options to select from
+ ⍝ ← ←→ The indices of the User's choice
+     ⎕PATH←'##.Utils'
+     ⍺←''
+     responseNS←setupUserResponse'Int'
+     h←⎕NEW HtmlFormBuilder 1
+     _←h.addCheckboxInput ⍵
+     size←25 15
+     ⍺ renderPage h size responseNS
+ }

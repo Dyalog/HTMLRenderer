@@ -1,0 +1,32 @@
+ returnProgressObject←{
+⍝ ⍵ ←→ HtmlRenderer object
+⍝ ← ←→ An object where users can update the progress values
+     obj←⍵
+     ns←⎕NS''
+     ns.obj←obj
+     ns.setProgress←{
+     ⍝ ⍵ ←→ New value to set progress bar to
+         6::'Page terminated'
+         html←⎕THIS.obj.HTML
+         flagStr←'progress value ="'
+         s←flagStr,'\w*"'       ⍝ Regex search pattern
+         r←flagStr,(⍕⍵),'"'     ⍝ Regex replace pattern
+         ⎕THIS.obj.HTML←(s ⎕R r)html
+         0
+     }
+     ns.setHeader←{
+         6::'Page terminated'
+         html←⎕THIS.obj.HTML
+         ss1EndFlag←'</progress>'
+         ss1←((⍸ss1EndFlag⍷html)+≢ss1EndFlag)↑html
+         header←'<h4>',(⍕⍵),'</h4>'
+         ss2BeginFlag←'<script>'
+         ss2←(⍸ss2BeginFlag⍷html)↓html
+         ⎕THIS.obj.HTML←ss1,header,ss2
+     }
+     ns.close←{
+         6::'Page terminated'
+         ⎕THIS.obj.Close
+     }
+     ns
+ }

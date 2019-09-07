@@ -1,0 +1,7 @@
+ NotifyInfo←{
+ ⍝ ⍺ ←→ Parameter namespace (Optional)
+ ⍝ ⍵ ←→ Info message you want displayed
+     ⎕PATH←'##.Utils'
+     ⍺←''
+     r←⍺ Notify'Info'⍵
+ }

@@ -1,0 +1,7 @@
+ NotifyError←{
+ ⍝ ⍺ ←→ Parameter namespace (Optional)
+ ⍝ ⍵ ←→ Error message you want displayed
+     ⎕PATH←'##.Utils'
+     ⍺←''
+     r←⍺ Notify'Danger'⍵
+ }

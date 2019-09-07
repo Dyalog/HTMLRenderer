@@ -1,0 +1,9 @@
+ captureHTML←{
+⍝ Capture generated HTML and exit application
+⍝ ← ←→ HTML generated
+     form←f.hr.Form
+     _←⎕NQ f'Close'
+     ⎕←form.getHTML
+     ⎕THIS.FormObj←form
+     ⎕←'FormObj updated'
+ }

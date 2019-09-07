@@ -1,0 +1,8 @@
+ setupUserResponse←{
+ ⍝  ⍵  ←→ Response Type. {Char,Int}
+ ⍝  r  ←← Namespace to collect the user's response
+     ns←⎕NS''
+     ns.Query←¯1
+     ns.ResultType←⍵
+     ns
+ }
